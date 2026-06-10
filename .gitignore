@@ -1,5 +1,20 @@
+# OS
 .DS_Store
+Thumbs.db
+
+# Editor
 *.swp
 *.swo
 *~
+.idea/
+.vscode/
+*.iml
+
+# Claude
+.claude/
+
+# Node
+node_modules/
+
+# Build artifacts
 guide.md
