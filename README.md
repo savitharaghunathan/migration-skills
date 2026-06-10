@@ -45,6 +45,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 | Skill | Source → Target | Rows | Link |
 |-------|----------------|------|------|
 | [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | 88 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
+| [Spring Boot 3 to 4](skills/java/spring-boot-3-to-4/) | Spring Boot 3.5 → 4.0 | 122 | [SKILL.md](skills/java/spring-boot-3-to-4/SKILL.md) |
 
 ## Project Structure
 
@@ -56,6 +57,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 - `skills/` — Generated output, organized by language
   - `java/`
     - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
+    - [`spring-boot-3-to-4/`](skills/java/spring-boot-3-to-4/) — Spring Boot 3.5 to 4.0 migration (modular redesign, Jackson 3, @MockBean removal, starter renames, config property migrations)
 
 ## Generated Skill Format
 
