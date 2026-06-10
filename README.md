@@ -40,6 +40,12 @@ The generator uses **rigid templates** for skill structure and **table schemas**
    ```
    Then ask your agent to run the migration on your codebase.
 
+## Available Migration Skills
+
+| Skill | Source → Target | Rows | Link |
+|-------|----------------|------|------|
+| [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | 88 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
+
 ## Project Structure
 
 - `generator/` — The meta-skill that generates migration skills
@@ -48,7 +54,8 @@ The generator uses **rigid templates** for skill structure and **table schemas**
   - `references/` — Templates and table schemas
   - `examples/` — Hand-curated reference skills for few-shot grounding
 - `skills/` — Generated output, organized by language
-  - `java/`, `go/`, `python/`, `dotnet/`
+  - `java/`
+    - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
 
 ## Generated Skill Format
 
