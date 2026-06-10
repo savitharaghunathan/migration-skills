@@ -1,0 +1,100 @@
+# Phase 3: Compose
+
+Assemble the generated skill from templates and populated mapping tables.
+
+## Input
+
+- Populated mapping tables from Phase 2 (dependency-map.md, api-map.md, config-map.md, pattern-map.md — whichever have data)
+- Detected metadata from Phase 1 (language, source_framework, source_version, target_framework, target_version)
+
+## Overwrite protection
+
+Before writing, check if `skills/{{language}}/{{migration_name}}/` already exists.
+
+- **If it exists and the repo has git history for this path:** Warn the user:
+  > "Skill directory `skills/{{language}}/{{migration_name}}/` already exists. Generating will overwrite. Commit or stash any manual edits first."
+  - If the user confirms → proceed, overwrite
+  - If the user declines → write to `skills/{{language}}/{{migration_name}}-{{YYYYMMDD}}/` instead
+- **If it exists but has no git history:** Proceed with overwrite (it's a previous uncommitted generation)
+- **If it doesn't exist:** Proceed normally
+
+## Steps
+
+### 1. Determine the migration name
+
+Construct the kebab-case migration name: `{{source}}-to-{{target}}`
+
+Examples:
+- `spring-boot-3-to-4`
+- `django-4-to-5`
+- `httpclient-4-to-5`
+- `dotnet-6-to-8`
+
+Must be under 64 characters and contain only lowercase letters, numbers, and hyphens.
+
+### 2. Build the SKILL.md
+
+Read `generator/references/skill-template.md` and fill in all `{{...}}` placeholders:
+
+- `{{migration_name}}` — the kebab-case name from step 1
+- `{{source_framework}}`, `{{target_framework}}` — human-readable names (e.g., "Spring Boot")
+- `{{source_version}}`, `{{target_version}}` — version numbers (e.g., "3", "4")
+- `{{source}}`, `{{target}}` — short identifiers for labels (e.g., "spring-boot-3", "spring-boot-4")
+- `{{language}}` — detected language (e.g., "java", "go", "python", "dotnet")
+- `{{build_tool}}` — detected build tool and command (e.g., "maven: mvn compile")
+- `{{guide_urls}}` — the original guide URL(s) provided by the user
+- `{{timestamp}}` — current ISO 8601 timestamp
+- `{{migration_summary}}` — one paragraph summarizing the migration scope based on the guide content
+- `{{phase_list}}` — numbered list of phases that have data (see below)
+
+### 3. Build the phase list
+
+Include only phases that have corresponding data:
+
+| Phase | Include if... |
+|-------|---------------|
+| Build system | `dependency-map.md` has rows |
+| Code | `api-map.md` OR `pattern-map.md` has rows |
+| Config | `config-map.md` has rows |
+| Testing | `api-map.md` has rows with test-related `source_section` values |
+| Additional | `pattern-map.md` has rows with `category` = `addition` or non-code `source_section` values |
+| Cleanup | Always included (it's the verification phase) |
+
+### 4. Copy module templates
+
+For each included phase, copy the corresponding template from `generator/references/module-templates/` into the output `modules/` directory:
+- `build-system.md`, `code.md`, `config.md`, `testing.md`, `additional.md`, `cleanup.md`
+
+### 5. Copy mapping tables
+
+Copy the populated mapping table files into the output `references/` directory.
+
+### 6. Copy guide (traceability)
+
+Copy the normalized `guide.md` into the output directory. This is a build artifact for traceability — not part of the agentskills.io skill.
+
+### 7. Write the output
+
+Write all files to: `skills/{{language}}/{{migration_name}}/`
+
+```
+skills/{{language}}/{{migration_name}}/
+├── SKILL.md
+├── guide.md              (build artifact)
+├── modules/
+│   ├── build-system.md   (if dependency-map has data)
+│   ├── code.md           (if api-map or pattern-map has data)
+│   ├── config.md         (if config-map has data)
+│   ├── testing.md        (if test-related data exists)
+│   ├── additional.md     (if non-code changes exist)
+│   └── cleanup.md        (always)
+└── references/
+    ├── dependency-map.md  (if has data)
+    ├── api-map.md         (if has data)
+    ├── config-map.md      (if has data)
+    └── pattern-map.md     (if has data)
+```
+
+## Output
+
+The complete skill directory, ready for validation.
