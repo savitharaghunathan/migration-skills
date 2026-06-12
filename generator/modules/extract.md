@@ -40,6 +40,7 @@ A single section may contain multiple change types. For each artifact or change 
 - **config** — A configuration property is renamed, removed, or has a changed default value. Route to `config-map.md`.
 - **pattern** — A code pattern change that isn't a simple rename: behavioral change, structural refactor, new idiom. Route to `pattern-map.md`.
 - **additional** — Changes outside standard categories: database schemas, deployment config, build plugin config, infrastructure. Route to `pattern-map.md` with appropriate `category` value.
+- **prerequisite** — A precondition that must be met before starting the migration (e.g., "upgrade to the latest minor version first", "resolve all deprecation warnings", "minimum runtime version required"). Do NOT route to a mapping table — instead, collect these and pass them to the compose phase to include as a prerequisite block in SKILL.md.
 - **informational** — Context or background with no actionable migration change. **Skip.**
 
 ### 2. Fill the appropriate table

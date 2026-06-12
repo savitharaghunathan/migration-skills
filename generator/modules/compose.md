@@ -5,6 +5,7 @@ Assemble the generated skill from templates and populated mapping tables.
 ## Input
 
 - Populated mapping tables from Phase 2 (dependency-map.md, api-map.md, config-map.md, pattern-map.md — whichever have data)
+- Prerequisites collected from Phase 2 (preconditions that must be met before starting the migration)
 - Detected metadata from Phase 1 (language, source_framework, source_version, target_framework, target_version)
 
 ## Overwrite protection
@@ -44,6 +45,7 @@ Read `generator/references/skill-template.md` and fill in all `{{...}}` placehol
 - `{{build_tool}}` — detected build tool and command (e.g., "maven: mvn compile")
 - `{{guide_urls}}` — the original guide URL(s) provided by the user
 - `{{timestamp}}` — current ISO 8601 timestamp
+- `{{prerequisites}}` — if prerequisites were collected in Phase 2, render a bold "Prerequisite:" block listing each precondition. If none were collected, remove the placeholder entirely (leave no blank line)
 - `{{migration_summary}}` — one paragraph summarizing the migration scope based on the guide content
 - `{{phase_list}}` — numbered list of phases that have data (see below)
 

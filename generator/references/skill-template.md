@@ -16,6 +16,8 @@ metadata:
 
 # {{source_framework}} {{source_version}} to {{target_version}} Migration
 
+{{prerequisites}}
+
 {{migration_summary}}
 
 ## Phases
