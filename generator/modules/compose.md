@@ -71,6 +71,18 @@ For each included phase, copy the corresponding template from `generator/referen
 
 Copy the populated mapping table files into the output `references/` directory.
 
+### 5b. Build sources.md (provenance)
+
+Create `references/sources.md` linking every `source_section` value in the mapping tables back to its original URL from the guide.
+
+- Group by guide source (primary guide, supplementary guides)
+- For each unique `source_section`, provide the URL with fragment anchor (e.g., `https://example.com/guide#section-name`)
+- If the guide is a single-page wiki, construct fragment anchors from section headings
+- If the guide spans multiple pages, link to the specific page
+- Include a "Supplementary" section for any web search results or external references used during extraction
+
+This file is bundled with the skill as provenance — it lets users and agents verify that mapping table rows trace back to authoritative sources.
+
 ### 6. Copy guide (traceability)
 
 Copy the normalized `guide.md` into the output directory. This is a build artifact for traceability — not part of the agentskills.io skill.
@@ -94,7 +106,8 @@ skills/{{language}}/{{migration_name}}/
     ├── dependency-map.md  (if has data)
     ├── api-map.md         (if has data)
     ├── config-map.md      (if has data)
-    └── pattern-map.md     (if has data)
+    ├── pattern-map.md     (if has data)
+    └── sources.md         (always — provenance links)
 ```
 
 ## Output

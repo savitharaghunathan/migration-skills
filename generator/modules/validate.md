@@ -16,6 +16,7 @@ Verify the skill conforms to the agentskills.io format:
 - [ ] `name` is kebab-case, contains only lowercase letters/numbers/hyphens, under 64 characters
 - [ ] Every module file listed in SKILL.md's phase list exists in `modules/`
 - [ ] Every `references/*.md` file referenced by module files exists in `references/`
+- [ ] `references/sources.md` exists and links every unique `source_section` to its original URL
 - [ ] All mapping table rows have required columns filled:
   - dependency-map: `old_artifact`, `new_artifact`, `action`, `source_section`
   - api-map: `old_api`, `new_api`, `kind`, `action`, `source_section`
