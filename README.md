@@ -46,6 +46,8 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 |-------|----------------|------|------|
 | [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | 88 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
 | [Spring Boot 3 to 4](skills/java/spring-boot-3-to-4/) | Spring Boot 3.5 → 4.0 | 122 | [SKILL.md](skills/java/spring-boot-3-to-4/SKILL.md) |
+| [Spring Boot to Quarkus](skills/java/spring-boot-to-quarkus/) | Spring Boot 3.x → Quarkus 3.x | 144 | [SKILL.md](skills/java/spring-boot-to-quarkus/SKILL.md) |
+| [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | 80 | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
 
 ## Project Structure
 
@@ -58,6 +60,8 @@ The generator uses **rigid templates** for skill structure and **table schemas**
   - `java/`
     - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
     - [`spring-boot-3-to-4/`](skills/java/spring-boot-3-to-4/) — Spring Boot 3.5 to 4.0 migration (modular redesign, Jackson 3, @MockBean removal, starter renames, config property migrations)
+    - [`spring-boot-to-quarkus/`](skills/java/spring-boot-to-quarkus/) — Spring Boot 3.x to Quarkus 3.x migration (cross-framework, DI/REST/config rewrites, dual path: pure Quarkus or Spring compat extensions)
+    - [`httpclient-4-to-5/`](skills/java/httpclient-4-to-5/) — Apache HttpClient 4.x to 5.x migration (package relocation, timeout/TLS restructuring, optional async API migration)
 
 ## Generated Skill Format
 
