@@ -50,6 +50,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 | [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
 | [Spring Framework 5 to 6](skills/java/spring-framework-5-to-6/) | Spring Framework 5.x → 6.x | [SKILL.md](skills/java/spring-framework-5-to-6/SKILL.md) |
 | [Spring Framework 4 to 5](skills/java/spring-framework-4-to-5/) | Spring Framework 4.x → 5.x | [SKILL.md](skills/java/spring-framework-4-to-5/SKILL.md) |
+| [JBoss EAP 7 to 8](skills/java/jboss-eap-7-to-8/) | JBoss EAP 7.x → 8.0 | [SKILL.md](skills/java/jboss-eap-7-to-8/SKILL.md) |
 | [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
 
 ## Project Structure
@@ -66,6 +67,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
     - [`spring-boot-to-quarkus/`](skills/java/spring-boot-to-quarkus/) — Spring Boot 3.x to Quarkus 3.x migration (cross-framework, DI/REST/config rewrites, dual path: pure Quarkus or Spring compat extensions)
     - [`spring-framework-4-to-5/`](skills/java/spring-framework-4-to-5/) — Spring Framework 4.x to 5.x migration (JDK 8+/Java EE 7+ baseline, Portlet/Velocity/JasperReports removal, Guava→Caffeine, spring-jcl logging, WebFlux introduction, 107 migration items across 5.0/5.1/5.2/5.3)
     - [`spring-framework-5-to-6/`](skills/java/spring-framework-5-to-6/) — Spring Framework 5.x to 6.x migration (Jakarta EE 9+ baseline, RPC remoting removal, HttpMethod enum→class, parameter name retention, property placeholder rewrite, 101 migration items across 6.0/6.1/6.2)
+    - [`jboss-eap-7-to-8/`](skills/java/jboss-eap-7-to-8/) — JBoss EAP 7.x to 8.0 migration (Jakarta EE 8→10 namespace, 25+ JBoss spec artifact renames, PicketBox/PicketLink→Elytron security, Servlet 6.0/Faces 4.0/CDI 4.0 API removals, JAXB impl relocation, RESTEasy 6.2, HornetQ→Artemis messaging, EJB client/mod_cluster/Undertow config changes, Hibernate 5→6, 225 migration items)
     - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
     - [`httpclient-4-to-5/`](skills/java/httpclient-4-to-5/) — Apache HttpClient 4.x to 5.x migration (package relocation, timeout/TLS restructuring, optional async API migration)
 
