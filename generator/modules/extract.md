@@ -51,7 +51,7 @@ For each classified change, add a row to the matching table. Follow the column d
 - **Extract source-side artifacts.** The `old_*` column should contain the thing that exists in unmigrated code — what the executing agent will search for. Do NOT extract only target-side artifacts.
 - **One row per artifact.** If a section describes 5 removed classes, create 5 rows in api-map, not 1 row with a list.
 - **Always fill `source_section`.** This is how the validate phase checks completeness.
-- **Include before/after when the guide provides code examples.** If the guide shows a before/after pair, copy the relevant snippet into the `before`/`after` columns.
+- **Capture ALL code examples from the guide.** When the guide provides any code snippet — before/after pairs, standalone examples, configuration snippets, command-line flags, annotations, method signatures — copy the relevant code into the `before`/`after` columns of the appropriate table row. Use backtick-wrapped inline code in table cells. If a code example doesn't map to an existing row, create a new `pattern-map` row for it. Do not skip code examples — they are the most valuable part of the skill for agents performing migrations.
 - **Use fully qualified names for `old_api`/`new_api`.** Include the full package path, not just the class name.
 
 ### 3. One section → multiple tables
