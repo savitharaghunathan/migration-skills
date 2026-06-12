@@ -62,10 +62,31 @@ Include only phases that have corresponding data:
 | Additional | `pattern-map.md` has rows with `category` = `addition` or non-code `source_section` values |
 | Cleanup | Always included (it's the verification phase) |
 
-### 4. Copy module templates
+### 4. Customize module files from templates
 
-For each included phase, copy the corresponding template from `generator/references/module-templates/` into the output `modules/` directory:
-- `build-system.md`, `code.md`, `config.md`, `testing.md`, `additional.md`, `cleanup.md`
+For each included phase, start from the corresponding template in `generator/references/module-templates/` and **customize it with migration-specific content** drawn from the populated mapping tables. Do NOT copy templates verbatim — every module file must reference concrete artifacts from this migration.
+
+Templates to customize: `build-system.md`, `code.md`, `config.md`, `testing.md`, `additional.md`, `cleanup.md`
+
+For each module file:
+
+1. **Read the template** to get the structural skeleton (headings, step numbering, build gate format)
+2. **Read the relevant mapping tables** populated in Phase 2
+3. **Replace generic instructions with specific ones:**
+
+   - **build-system.md** — List the specific dependency changes from `dependency-map.md` as named steps (e.g., "Remove `old_artifact`, replace with `new_artifact`"). Include version constraints and build tool snippets where the guide provides them. Trim language/build-tool options to only the target language.
+
+   - **code.md** — In the API replacements section, list concrete examples from `api-map.md` for each `kind` (e.g., "package: `org.old.pkg.*` → `org.new.pkg.*`", "class: `OldClass` → `NewClass`"). In the pattern changes section, call out the most impactful `pattern-map.md` rows by name with before/after summaries. Add a "Key areas to search" subsection listing the most common old identifiers.
+
+   - **config.md** — Replace the multi-language config file list with only the target language's files. Add a "Key migration groups" subsection listing the specific property renames/removals from `config-map.md`, grouped by topic. Include any default-value changes that require explicit action.
+
+   - **testing.md** — List specific test API changes (annotations, mock frameworks, test configuration) from the mapping tables. Call out test dependency changes. Reference specific behavioral changes that surface as test failures rather than compilation errors.
+
+   - **additional.md** — Replace the generic category list (Database, Deployment, Build plugins, Infrastructure) with named subsections for this migration's specific non-code changes from `pattern-map.md` (category `addition` or infrastructure-related rows). Include runtime requirements, tool changes, and deployment impacts.
+
+   - **cleanup.md** — In "Remove old package imports", list the specific old package/import patterns to search for. In "Verify no old artifacts remain", list the specific old coordinates, property names, and API names. In the behavioral changes section, enumerate the specific `behavioral` rows from `pattern-map.md` that need manual verification.
+
+4. **Trim irrelevant content** — Remove language/framework options that don't apply (e.g., remove Go/Python/.NET references from a Java migration). Remove phases that have no data.
 
 ### 5. Copy mapping tables
 

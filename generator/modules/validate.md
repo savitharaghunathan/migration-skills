@@ -23,6 +23,10 @@ Verify the skill conforms to the agentskills.io format:
   - config-map: `old_property`, `new_property`, `source_section`
   - pattern-map: `description`, `category`, `source_section`
 - [ ] No empty required cells in any table row
+- [ ] Module files are customized, not generic template copies:
+  - Each module references specific APIs, classes, properties, or patterns from this migration's mapping tables
+  - Generic multi-language options are trimmed to the target language only
+  - Build gate sections list migration-specific failure modes, not just generic categories
 
 **If any check fails:** Fix the issue and re-run Check 1. If the fix requires regenerating content, go back to Phase 3 (compose).
 
