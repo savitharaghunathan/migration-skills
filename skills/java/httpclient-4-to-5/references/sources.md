@@ -9,7 +9,19 @@ Provenance links for each source section referenced in the mapping tables.
 | Migration steps | https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html#migration-steps |
 | Migration recipes | https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html#migration-recipes |
 
-## Async API Migration Guide
+## Preparation Guide
+
+| Source Section | URL |
+|---|---|
+| Preparation (4.x baseline) | https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/preparation.html |
+
+## Async Simple API Migration Guide
+
+| Source Section | URL |
+|---|---|
+| Migration to async simple APIs | https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-async-simple.html |
+
+## Async Streaming API Migration Guide
 
 | Source Section | URL |
 |---|---|
