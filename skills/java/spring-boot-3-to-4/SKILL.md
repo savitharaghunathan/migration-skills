@@ -15,6 +15,8 @@ metadata:
 
 # Spring Boot 3 to 4 Migration
 
+**Prerequisite:** Before migrating to Spring Boot 4.0, upgrade your project to Spring Boot 3.5.x first. Resolve all deprecation warnings on 3.5 — APIs deprecated in 3.x are removed in 4.0. This skill assumes you are starting from Spring Boot 3.5.
+
 Spring Boot 4.0 is a major release requiring Java 17+, Jakarta EE 11, Servlet 6.1, and Spring Framework 7.x. Key migration concerns include: a complete modular redesign with new starter naming conventions, Jackson 3 adoption (group ID change from `com.fasterxml.jackson` to `tools.jackson`), removal of `@MockBean`/`@SpyBean` in favor of `@MockitoBean`/`@MockitoSpyBean`, Undertow support dropped, numerous configuration property renames (MongoDB, Session, Jackson), Elasticsearch Rest5Client migration, JSpecify nullability annotations replacing Spring's, and test infrastructure restructuring requiring per-technology test starters.
 
 ## Phases
