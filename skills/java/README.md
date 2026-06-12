@@ -7,4 +7,5 @@
 | [Spring Boot to Quarkus](spring-boot-to-quarkus/) | Spring Boot 3.x → Quarkus 3.x | Cross-framework | [SKILL.md](spring-boot-to-quarkus/SKILL.md) |
 | [JDK 21 to 25](jdk-21-to-25/) | JDK 21 → JDK 25 | Version upgrade | [SKILL.md](jdk-21-to-25/SKILL.md) |
 | [Spring Framework 5 to 6](spring-framework-5-to-6/) | Spring Framework 5.x → 6.x | Version upgrade | [SKILL.md](spring-framework-5-to-6/SKILL.md) |
+| [Spring Framework 4 to 5](spring-framework-4-to-5/) | Spring Framework 4.x → 5.x | Version upgrade | [SKILL.md](spring-framework-4-to-5/SKILL.md) |
 | [HttpClient 4 to 5](httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | Version upgrade | [SKILL.md](httpclient-4-to-5/SKILL.md) |
