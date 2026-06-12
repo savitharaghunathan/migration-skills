@@ -42,12 +42,12 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 
 ## Available Migration Skills
 
-| Skill | Source → Target | Rows | Link |
-|-------|----------------|------|------|
-| [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | 88 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
-| [Spring Boot 3 to 4](skills/java/spring-boot-3-to-4/) | Spring Boot 3.5 → 4.0 | 122 | [SKILL.md](skills/java/spring-boot-3-to-4/SKILL.md) |
-| [Spring Boot to Quarkus](skills/java/spring-boot-to-quarkus/) | Spring Boot 3.x → Quarkus 3.x | 144 | [SKILL.md](skills/java/spring-boot-to-quarkus/SKILL.md) |
-| [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | 80 | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
+| Skill | Source → Target | Link |
+|-------|----------------|------|
+| [JDK 21 to 25](skills/java/jdk-21-to-25/) | JDK 21 → JDK 25 | [SKILL.md](skills/java/jdk-21-to-25/SKILL.md) |
+| [Spring Boot 3 to 4](skills/java/spring-boot-3-to-4/) | Spring Boot 3.5 → 4.0 | [SKILL.md](skills/java/spring-boot-3-to-4/SKILL.md) |
+| [Spring Boot to Quarkus](skills/java/spring-boot-to-quarkus/) | Spring Boot 3.x → Quarkus 3.x | [SKILL.md](skills/java/spring-boot-to-quarkus/SKILL.md) |
+| [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
 
 ## Project Structure
 
