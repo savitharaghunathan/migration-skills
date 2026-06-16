@@ -8,6 +8,7 @@
 | [JDK 21 to 25](jdk-21-to-25/) | JDK 21 → JDK 25 | Version upgrade | [SKILL.md](jdk-21-to-25/SKILL.md) |
 | [Spring Framework 5 to 6](spring-framework-5-to-6/) | Spring Framework 5.x → 6.x | Version upgrade | [SKILL.md](spring-framework-5-to-6/SKILL.md) |
 | [Spring Framework 4 to 5](spring-framework-4-to-5/) | Spring Framework 4.x → 5.x | Version upgrade | [SKILL.md](spring-framework-4-to-5/SKILL.md) |
+| [Java EE to Jakarta EE](javax-to-jakarta-ee/) | Java EE 8 (javax) → Jakarta EE 10 (jakarta) | Namespace migration | [SKILL.md](javax-to-jakarta-ee/SKILL.md) |
 | [JBoss EAP 7 to 8](jboss-eap-7-to-8/) | JBoss EAP 7.x → 8.0 | Version upgrade | [SKILL.md](jboss-eap-7-to-8/SKILL.md) |
 | [Hibernate 5 to 6](hibernate-5-to-6/) | Hibernate ORM 5.x → 6.x | Version upgrade | [SKILL.md](hibernate-5-to-6/SKILL.md) |
 | [HttpClient 4 to 5](httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | Version upgrade | [SKILL.md](httpclient-4-to-5/SKILL.md) |
