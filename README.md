@@ -54,6 +54,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 | [JBoss EAP 7 to 8](skills/java/jboss-eap-7-to-8/) | JBoss EAP 7.x → 8.0 | [SKILL.md](skills/java/jboss-eap-7-to-8/SKILL.md) |
 | [Hibernate 5 to 6](skills/java/hibernate-5-to-6/) | Hibernate ORM 5.x → 6.x | [SKILL.md](skills/java/hibernate-5-to-6/SKILL.md) |
 | [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
+| [Camel 3 to 4](skills/java/camel-3-to-4/) | Apache Camel 3.x → 4.0 | [SKILL.md](skills/java/camel-3-to-4/SKILL.md) |
 
 ## Project Structure
 
@@ -74,6 +75,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
     - [`hibernate-5-to-6/`](skills/java/hibernate-5-to-6/) — Hibernate ORM 5.x to 6.x migration (Jakarta Persistence, type system overhaul, SQM query model, per-entity ID sequences, Duration/UUID/Instant/array/enum type mapping changes, legacy Criteria removal, dialect simplification, multitenancy simplification, 153 migration items across 6.0/6.1/6.2)
     - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
     - [`httpclient-4-to-5/`](skills/java/httpclient-4-to-5/) — Apache HttpClient 4.x to 5.x migration (package relocation, timeout/TLS restructuring, optional async API migration)
+    - [`camel-3-to-4/`](skills/java/camel-3-to-4/) — Apache Camel 3.x to 4.0 migration (Java 17 required, 34 removed components, JUnit 5 required, CamelContext/Exchange API decoupling, XML/YAML DSL changes, HttpComponents v5, health check defaults, micrometer naming, 123 migration items)
 
 ## Generated Skill Format
 
