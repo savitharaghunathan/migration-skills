@@ -13,3 +13,4 @@
 | [Hibernate 5 to 6](hibernate-5-to-6/) | Hibernate ORM 5.x → 6.x | Version upgrade | [SKILL.md](hibernate-5-to-6/SKILL.md) |
 | [HttpClient 4 to 5](httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | Version upgrade | [SKILL.md](httpclient-4-to-5/SKILL.md) |
 | [Camel 3 to 4](camel-3-to-4/) | Apache Camel 3.x → 4.0 | Version upgrade | [SKILL.md](camel-3-to-4/SKILL.md) |
+| [OpenTracing to OpenTelemetry](opentracing-to-opentelemetry/) | OpenTracing → OpenTelemetry | Cross-framework | [SKILL.md](opentracing-to-opentelemetry/SKILL.md) |

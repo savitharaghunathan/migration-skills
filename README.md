@@ -55,6 +55,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 | [Hibernate 5 to 6](skills/java/hibernate-5-to-6/) | Hibernate ORM 5.x → 6.x | [SKILL.md](skills/java/hibernate-5-to-6/SKILL.md) |
 | [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
 | [Camel 3 to 4](skills/java/camel-3-to-4/) | Apache Camel 3.x → 4.0 | [SKILL.md](skills/java/camel-3-to-4/SKILL.md) |
+| [OpenTracing to OpenTelemetry](skills/java/opentracing-to-opentelemetry/) | OpenTracing → OpenTelemetry | [SKILL.md](skills/java/opentracing-to-opentelemetry/SKILL.md) |
 
 ## Project Structure
 
@@ -76,6 +77,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
     - [`jdk-21-to-25/`](skills/java/jdk-21-to-25/) — JDK 21 to 25 migration (Security Manager removal, sun.misc.Unsafe deprecation, ZGC changes, JVM option removals)
     - [`httpclient-4-to-5/`](skills/java/httpclient-4-to-5/) — Apache HttpClient 4.x to 5.x migration (package relocation, timeout/TLS restructuring, optional async API migration)
     - [`camel-3-to-4/`](skills/java/camel-3-to-4/) — Apache Camel 3.x to 4.0 migration (Java 17 required, 34 removed components, JUnit 5 required, CamelContext/Exchange API decoupling, XML/YAML DSL changes, HttpComponents v5, health check defaults, micrometer naming, 123 migration items)
+    - [`opentracing-to-opentelemetry/`](skills/java/opentracing-to-opentelemetry/) — OpenTracing to OpenTelemetry migration (io.opentracing→io.opentelemetry API replacement, Jaeger client removal, Tags→Attributes, error handling→StatusCode+recordException, @Traced→@WithSpan, baggage architecture change, Jaeger→OTLP config, W3C TraceContext propagation, 75 migration items)
 
 ## Generated Skill Format
 
