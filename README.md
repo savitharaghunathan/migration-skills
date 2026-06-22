@@ -85,25 +85,6 @@ The generator uses **rigid templates** for skill structure and **table schemas**
   - `kubernetes/`
     - [`agent-sandbox-v1alpha1-to-v1beta1/`](skills/kubernetes/agent-sandbox-v1alpha1-to-v1beta1/) — Agent Sandbox CRD v1alpha1 to v1beta1 migration (SandboxClaim field restructure warmpool→warmPoolRef, Sandbox replicas→operatingMode, two-phase bootstrap+migrate script, shadow pool management, Helm/kubectl flows, emergency rollback, 29 migration items)
 
-## Generated Skill Format
-
-Each generated skill follows the [agentskills.io](https://agentskills.io/specification) format:
-
-```
-skills/<language>/<migration-name>/
-├── SKILL.md              # Phased migration workflow
-├── modules/              # Per-phase instructions
-│   ├── build-system.md
-│   ├── code.md
-│   ├── config.md
-│   ├── testing.md
-│   └── cleanup.md
-└── references/           # Mapping tables
-    ├── dependency-map.md
-    ├── api-map.md
-    └── config-map.md
-```
-
 ## License
 
 Apache-2.0
