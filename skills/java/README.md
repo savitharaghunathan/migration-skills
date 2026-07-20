@@ -14,3 +14,4 @@
 | [HttpClient 4 to 5](httpclient-4-to-5/) | Apache HttpClient 4.x → 5.x | Version upgrade | [SKILL.md](httpclient-4-to-5/SKILL.md) |
 | [Camel 3 to 4](camel-3-to-4/) | Apache Camel 3.x → 4.0 | Version upgrade | [SKILL.md](camel-3-to-4/SKILL.md) |
 | [OpenTracing to OpenTelemetry](opentracing-to-opentelemetry/) | OpenTracing → OpenTelemetry | Cross-framework | [SKILL.md](opentracing-to-opentelemetry/SKILL.md) |
+| [Java EE to Quarkus](javaee-to-quarkus/) | Java EE 7/8 → Quarkus 3 | Cross-framework | [SKILL.md](javaee-to-quarkus/SKILL.md) |

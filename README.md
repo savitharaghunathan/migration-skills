@@ -56,6 +56,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
 | [HttpClient 4 to 5](skills/java/httpclient-4-to-5/) | Java | Apache HttpClient 4.x → 5.x | [SKILL.md](skills/java/httpclient-4-to-5/SKILL.md) |
 | [Camel 3 to 4](skills/java/camel-3-to-4/) | Java | Apache Camel 3.x → 4.0 | [SKILL.md](skills/java/camel-3-to-4/SKILL.md) |
 | [OpenTracing to OpenTelemetry](skills/java/opentracing-to-opentelemetry/) | Java | OpenTracing → OpenTelemetry | [SKILL.md](skills/java/opentracing-to-opentelemetry/SKILL.md) |
+| [Java EE to Quarkus](skills/java/javaee-to-quarkus/) | Java | Java EE 7/8 → Quarkus 3 | [SKILL.md](skills/java/javaee-to-quarkus/SKILL.md) |
 | [Agent Sandbox v1alpha1 to v1beta1](skills/kubernetes/agent-sandbox-v1alpha1-to-v1beta1/) | Kubernetes | Agent Sandbox CRD v1alpha1 → v1beta1 | [SKILL.md](skills/kubernetes/agent-sandbox-v1alpha1-to-v1beta1/SKILL.md) |
 | [FIPS 140 & PQC Compliance](skills/go/fips-pqc-compliance/) | Go | Non-FIPS crypto → FIPS 140-3 compliant + PQC-ready | [SKILL.md](skills/go/fips-pqc-compliance/SKILL.md) |
 
@@ -80,6 +81,7 @@ The generator uses **rigid templates** for skill structure and **table schemas**
     - [`httpclient-4-to-5/`](skills/java/httpclient-4-to-5/) — Apache HttpClient 4.x to 5.x migration (package relocation, timeout/TLS restructuring, optional async API migration)
     - [`camel-3-to-4/`](skills/java/camel-3-to-4/) — Apache Camel 3.x to 4.0 migration (Java 17 required, 34 removed components, JUnit 5 required, CamelContext/Exchange API decoupling, XML/YAML DSL changes, HttpComponents v5, health check defaults, micrometer naming, 123 migration items)
     - [`opentracing-to-opentelemetry/`](skills/java/opentracing-to-opentelemetry/) — OpenTracing to OpenTelemetry migration (io.opentracing→io.opentelemetry API replacement, Jaeger client removal, Tags→Attributes, error handling→StatusCode+recordException, @Traced→@WithSpan, baggage architecture change, Jaeger→OTLP config, W3C TraceContext propagation, 75 migration items)
+    - [`javaee-to-quarkus/`](skills/java/javaee-to-quarkus/) — Java EE 7/8 to Quarkus 3 migration (EJB→CDI managed beans, JMS/MDB→SmallRye Reactive Messaging, WAR→JAR packaging, persistence.xml→application.properties, JNDI→injection, app server lifecycle→Quarkus events, WebLogic/JBoss/WildFly decommission, 6 phases)
   - `go/`
     - [`fips-pqc-compliance/`](skills/go/fips-pqc-compliance/) — FIPS 140-3 & PQC compliance migration for Go cryptography (non-FIPS x/crypto→stdlib, weak algorithm removal, TLS hardening, Go 1.24+ native FIPS mode, ML-KEM PQC key exchange, BoringCrypto migration, quantum-vulnerable algorithm inventory, 113 migration items)
   - `kubernetes/`
