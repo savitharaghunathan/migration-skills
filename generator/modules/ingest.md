@@ -48,10 +48,21 @@ Read the normalized guide and identify:
 - **Source framework and version:** The framework being migrated FROM (e.g., Spring Boot 3, Django 4)
 - **Target framework and version:** The framework being migrated TO (e.g., Spring Boot 4, Django 5)
 
+- **Smoke tool:** A command that starts the application, waits for it to become ready, probes a health endpoint, and tears down. The smoke tool verifies runtime wiring — dependency injection, driver loading, framework initialization — which the build gate cannot catch.
+
+  Common patterns:
+  - Java/Quarkus: `mvn quarkus:dev &; sleep 15; curl -sf http://localhost:8080/q/health; kill %1`
+  - Java/Spring: `mvn spring-boot:run &; sleep 15; curl -sf http://localhost:8080/actuator/health; kill %1`
+  - Go: `go run . &; sleep 5; curl -sf http://localhost:8080/healthz; kill %1`
+  - Python/Django: `python manage.py runserver &; sleep 5; curl -sf http://localhost:8000/health/; kill %1`
+  - .NET: `dotnet run &; sleep 5; curl -sf http://localhost:5000/health; kill %1`
+
+  If the guide mentions a health endpoint or startup command, use those. Otherwise infer from the detected framework. If unsure, leave empty — the executing agent can detect it from project files.
+
 If language or framework can't be confidently detected, ask the user.
 
 ## Output
 
 Pass to the next phase:
 1. The normalized guide content (working file)
-2. Detected metadata: `language`, `source_framework`, `source_version`, `target_framework`, `target_version`
+2. Detected metadata: `language`, `source_framework`, `source_version`, `target_framework`, `target_version`, `smoke_tool`

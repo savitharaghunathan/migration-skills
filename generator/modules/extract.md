@@ -20,6 +20,7 @@ Also read the table schemas for column definitions:
 - Read `generator/references/table-schemas/api-map.md`
 - Read `generator/references/table-schemas/config-map.md`
 - Read `generator/references/table-schemas/pattern-map.md`
+- Read `generator/references/table-schemas/verify-errors.md`
 
 ## Chunking strategy
 
@@ -40,6 +41,7 @@ A single section may contain multiple change types. For each artifact or change 
 - **config** — A configuration property is renamed, removed, or has a changed default value. Route to `config-map.md`.
 - **pattern** — A code pattern change that isn't a simple rename: behavioral change, structural refactor, new idiom. Route to `pattern-map.md`.
 - **additional** — Changes outside standard categories: database schemas, deployment config, build plugin config, infrastructure. Route to `pattern-map.md` with appropriate `category` value.
+- **error** — A troubleshooting tip, known issue, common failure mode, or "if you see X, do Y" guidance. Route to `verify-errors.md`. Look for these in "Troubleshooting", "Known Issues", "Common Errors", "FAQ", and "Migration Tips" sections. Also extract **implicit errors**: when the guide says "X is now provided automatically", "do not create your own X", or "the framework manages X", the old manual pattern causes a conflict at build or startup time — create a verify-errors row describing the resulting error, its cause (redundancy/conflict with framework-managed resource), and the fix (remove the old manual pattern).
 - **prerequisite** — A precondition that must be met before starting the migration (e.g., "upgrade to the latest minor version first", "resolve all deprecation warnings", "minimum runtime version required"). Do NOT route to a mapping table — instead, collect these and pass them to the compose phase to include as a prerequisite block in SKILL.md.
 - **informational** — Context or background with no actionable migration change. **Skip.**
 
@@ -63,12 +65,30 @@ A single guide section can produce rows in multiple tables. For example, "Remove
 
 Extract ALL changes, not just the primary one.
 
+### 4. Fill detect_pattern for pattern-map rows
+
+For each pattern-map row that has a `before` code block, extract a grep-friendly `detect_pattern` value:
+- Identify the most distinctive identifier, annotation, or method call in the `before` block
+- Write it as a literal string or simple regex suitable for `grep -rn`
+- If the `before` block spans multiple lines, pick the single most identifying line or annotation
+- For `addition` rows with no source-side code, leave `detect_pattern` empty
+
+### 5. Extract implicit removals as verify-errors
+
+When the guide says a feature "is now provided automatically", "is managed by the framework", or "should not be created manually":
+- Create a `verify-errors.md` row where `error_pattern` describes the conflict error that results from keeping the old artifact (e.g., `Ambiguous dependencies for type EntityManager`)
+- Set `cause` to explain the redundancy (e.g., "Manual producer conflicts with framework-managed bean")
+- Set `fix` to the removal action (e.g., "Delete the `@Produces` method — the framework injects `EntityManager` directly")
+- Set `phase` to the migration phase where this error surfaces
+- Set `source_section` to the guide section, or `experience` if inferred rather than explicit
+
 ## Output
 
-Write four files (omit any that have no rows):
+Write five files (omit any that have no rows):
 - `dependency-map.md` — markdown table with columns from the schema
 - `api-map.md` — markdown table with columns from the schema
 - `config-map.md` — markdown table with columns from the schema
 - `pattern-map.md` — markdown table with columns from the schema
+- `verify-errors.md` — markdown table with columns from the schema
 
 These are temporary working files — they will be copied to the output skill's `references/` directory during the compose phase.

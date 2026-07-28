@@ -22,6 +22,7 @@ Verify the skill conforms to the agentskills.io format:
   - api-map: `old_api`, `new_api`, `kind`, `action`, `source_section`
   - config-map: `old_property`, `new_property`, `source_section`
   - pattern-map: `description`, `category`, `source_section`
+  - verify-errors: `error_pattern`, `cause`, `fix`, `phase`
 - [ ] No empty required cells in any table row
 - [ ] Module files are customized, not generic template copies:
   - Each module references specific APIs, classes, properties, or patterns from this migration's mapping tables
@@ -65,7 +66,8 @@ Report uncovered artifacts with their guide section. For each, determine:
 - [ ] No duplicate source entries: the same `old_artifact`/`old_api`/`old_property` should not appear in multiple rows (unless mapped to different targets in genuinely different contexts — e.g., different `kind` values)
 - [ ] No contradictions: the same source artifact should not map to two different targets
 - [ ] Before/after coherence: where `before`/`after` code snippets exist, verify that `old_api` appears in `before` and `new_api` appears in `after`
-- [ ] Source section validity: every `source_section` value in every table corresponds to an actual heading in the guide
+- [ ] Source section validity: every `source_section` value in every table corresponds to an actual heading in the guide (exception: `experience` values in verify-errors are valid without a guide heading)
+- [ ] Phase validity: every `phase` value in `verify-errors.md` corresponds to an actual phase name in SKILL.md, or is `general`
 
 **If consistency issues found:** Flag the specific rows and reconcile — fix the duplicate/contradiction, don't delete both entries.
 

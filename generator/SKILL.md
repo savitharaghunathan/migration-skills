@@ -18,7 +18,7 @@ Reads a framework migration guide and produces an executable agentskills.io migr
 A complete skill directory at `skills/<language>/<migration-name>/` containing:
 - `SKILL.md` — phased migration workflow with build gates
 - `modules/` — per-phase instructions
-- `references/` — mapping tables (dependency, API, config, pattern)
+- `references/` — mapping tables (dependency, API, config, pattern, verify-errors)
 
 The generated skill can be installed in any project and used by any LLM agent to perform the actual migration.
 

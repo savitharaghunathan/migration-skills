@@ -4,7 +4,7 @@ Assemble the generated skill from templates and populated mapping tables.
 
 ## Input
 
-- Populated mapping tables from Phase 2 (dependency-map.md, api-map.md, config-map.md, pattern-map.md — whichever have data)
+- Populated mapping tables from Phase 2 (dependency-map.md, api-map.md, config-map.md, pattern-map.md, verify-errors.md — whichever have data)
 - Prerequisites collected from Phase 2 (preconditions that must be met before starting the migration)
 - Detected metadata from Phase 1 (language, source_framework, source_version, target_framework, target_version)
 
@@ -43,6 +43,7 @@ Read `generator/references/skill-template.md` and fill in all `{{...}}` placehol
 - `{{source}}`, `{{target}}` — short identifiers for labels (e.g., "spring-boot-3", "spring-boot-4")
 - `{{language}}` — detected language (e.g., "java", "go", "python", "dotnet")
 - `{{build_tool}}` — detected build tool and command (e.g., "maven: mvn compile")
+- `{{smoke_tool}}` — detected smoke command (e.g., "mvn quarkus:dev &; sleep 15; curl -sf http://localhost:8080/q/health; kill %1"). If no smoke command was detected, remove the `smoke_tool` metadata line entirely.
 - `{{guide_urls}}` — the original guide URL(s) provided by the user
 - `{{timestamp}}` — current ISO 8601 timestamp
 - `{{prerequisites}}` — if prerequisites were collected in Phase 2, render a bold "Prerequisite:" block listing each precondition. If none were collected, remove the placeholder entirely (leave no blank line)
@@ -92,6 +93,15 @@ For each module file:
 
 Copy the populated mapping table files into the output `references/` directory.
 
+For `verify-errors.md`, reconstruct the phase-grouped format expected by the verify/execute stage:
+- Group rows by their `phase` column value
+- Render each group under an H2 heading matching the phase name (e.g., `## Build System Phase`)
+- Within each group, render a 3-column table: `| Error | Cause | Fix |`
+- Map `error_pattern` → Error, `cause` → Cause, `fix` → Fix
+- Omit the `phase` and `source_section` columns from the rendered output — they are extraction metadata, not consumed by the verify stage
+- Order groups to match the phase order in SKILL.md
+- Place a `## General` section at the end for rows where `phase` = `general`
+
 ### 5b. Build sources.md (provenance)
 
 Create `references/sources.md` linking every `source_section` value in the mapping tables back to its original URL from the guide.
@@ -128,6 +138,7 @@ skills/{{language}}/{{migration_name}}/
     ├── api-map.md         (if has data)
     ├── config-map.md      (if has data)
     ├── pattern-map.md     (if has data)
+    ├── verify-errors.md   (if has data)
     └── sources.md         (always — provenance links)
 ```
 
